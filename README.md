@@ -1,3 +1,12 @@
+[Godot Engine研究ノート２](https://techbookfest.org/product/4TTGRqssf60xCYKEEmNrQp)のサポートページです。
+
+<a href="https://techbookfest.org/product/4TTGRqssf60xCYKEEmNrQp">
+<img src="images/cover.png" alt="Godot Engine研究ノート２" style="height: 300px">
+</a>
+
+（[https://techbookfest.org/product/4TTGRqssf60xCYKEEmNrQp](https://techbookfest.org/product/4TTGRqssf60xCYKEEmNrQp)）
+
+
 ご意見、ご要望、間違いの報告などは、[Issues](https://github.com/am1tanaka/GodotResearchNoteBook2/issues)にお願いします。
 
 ## 正誤表
