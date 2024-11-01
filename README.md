@@ -37,8 +37,7 @@ ShapeCast2D、および、ShapeCast3Dのcollision_resultが返す配列に列挙
 
 [GODOT DOCS. ShapeCast3D.collision_result](https://docs.godotengine.org/ja/4.x/classes/class_shapecast3d.html#class-shapecast3d-property-collision-result)には、[PhysicsDirectSpaceState3D.get_rest_info](https://docs.godotengine.org/ja/4.x/classes/class_physicsdirectspacestate3d.html#class-physicsdirectspacestate3d-method-get-rest-info)メソッドの戻り値と同じ結果が入っていると書かれています。そこにはcolliderは含まれておらず、書籍にもそのまま書いていました。
 
-Godot4.3で戻り値を改めて確認したところ、colliderに、接触相手のインスタンスが代入されていました。collider_idを使って、instance_from_id関数からオブジェクトを取得するはありませんでした。
-
+Godot4.3で戻り値を確認したところ、接触相手のobjectのインスタンスが、colliderに代入されていました。instance_from_id関数を使って、collider_idからオブジェクトを取得しなくて済むので助かります。
 
 ### ビットマップフォントのfntでエラーが出る
 
