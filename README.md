@@ -15,7 +15,7 @@
 
 誤「Outline thickness は、輪郭を付ける設定です。Godot 側でできるので通常は、不要です。」
 
-正「ビットマップフォントでは、Godot側で、輪郭が設定できないようです。ここで設定すると、輪郭付きのフォントを作成できます。
+正「ビットマップフォントでは、Godot側で、輪郭が設定できないようです。ここで設定すると、輪郭付きのフォントを作成できます。」
 
 ## 補足
 
@@ -29,7 +29,16 @@
 
 設定を戻すのを忘れるケアレスミスの原因になり兼ねないため、好ましい対策とは思えません。[こちら(Chris' Tutorials. Animation Tree State Machine Setup w/ Conditions & BlendSpace2D - Godot 4 Resource Gatherer Tutorial)の動画](https://youtu.be/WrMORzl3g1U?feature=shared)を見たところ、Activeは無効にしておいて、スクリプトで実行時に有効にしていました。
 
-やはり、編集中は自動的には動かさず、再生ボタンなどを用意してほしいと考える次第です。
+やはり、編集中は自動的には動かさず、再生ボタンなどを用意してほしいです。
+
+### p84 16行目 ShapeCast2D、および、ShapeCast3Dのcollision_resultの説明に、colliderが抜けていた
+
+ShapeCast2D、および、ShapeCast3Dのcollision_resultが返す配列に列挙されるDictionaryには、colliderが含まれていました。
+
+[GODOT DOCS. ShapeCast3D.collision_result](https://docs.godotengine.org/ja/4.x/classes/class_shapecast3d.html#class-shapecast3d-property-collision-result)には、[PhysicsDirectSpaceState3D.get_rest_info](https://docs.godotengine.org/ja/4.x/classes/class_physicsdirectspacestate3d.html#class-physicsdirectspacestate3d-method-get-rest-info)メソッドの戻り値と同じ結果が入っていると書かれています。そこにはcolliderは含まれておらず、書籍にもそのまま書いていました。
+
+Godot4.3で戻り値を改めて確認したところ、colliderに、接触相手のインスタンスが代入されていました。collider_idを使って、instance_from_id関数からオブジェクトを取得するはありませんでした。
+
 
 ### ビットマップフォントのfntでエラーが出る
 
